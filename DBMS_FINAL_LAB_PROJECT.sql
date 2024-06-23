@@ -305,3 +305,15 @@ SELECT  e.EmployeeName, e.Phone, e.Email, e.Address, pdt.ProductName, pr.Quantit
 FROM Purchases pr
 INNER JOIN Employees e ON pr.EmployeeID = e.EmployeeID
 INNER JOIN Products pdt ON pr.ProductID = pdt.ProductID;
+--find by id
+
+Select c.CustomerName,p.Amount from Customers c join Payments p
+
+on c.CustomerID=p.CustomerID where p.CustomerID=2
+--inbetween date search and date and amount wise search
+
+select e.EmployeeName ,s.TotalPrice from Employees e JOIN Sales s on e.EmployeeID=s.EmployeeID
+where s.SaleDate between '2024-05-03' and '2024-05-09'
+
+--like  search 
+SELECT * FROM Customers WHERE CustomerName LIKE 'J%';
